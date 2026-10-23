@@ -1,0 +1,19 @@
+SQLite integrity_check on C:/Users/MY PC/.skillbridge/skillbridge.db
+Mode: read-only
+Result: CORRUPT
+
+First 12 findings:
+*** in database main ***
+Freelist: freelist leaf count too big on page 378
+Freelist: invalid page number 218103808
+Tree 8 page 8 cell 80: Rowid 3023656976385 out of order
+Tree 8 page 8 cell 79: Rowid 2886218022914 out of order
+Tree 8 page 8 cell 78: Rowid 2886218022913 out of order
+Tree 8 page 8 cell 77: Rowid 2748779069442 out of order
+Tree 8 page 8 cell 76: Rowid 2748779069441 out of order
+Tree 8 page 8 cell 75: Rowid 2611340115969 out of order
+Tree 8 page 8 cell 74: Rowid 1236950581268 out of order
+Tree 8 page 8 cell 73: Rowid 1236950581267 out of order
+Tree 8 page 8 cell 72: Rowid 1236950581266 out of order
+
+Total findings: 91

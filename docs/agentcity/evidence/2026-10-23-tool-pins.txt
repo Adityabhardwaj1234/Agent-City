@@ -1,0 +1,24 @@
+command: powershell -File scripts/bootstrap-skills.ps1 -VerifyOnly
+cwd: C:\Users\MY PC\OneDrive\Desktop\AgentCity
+exit_code: 0
+mode: offline
+provider: none
+started_at: 2026-10-23T15:07:51Z
+duration_seconds: 2
+result: passed
+notes: both clones at pinned commits; SkillBridge and google-adk import checks succeeded
+adk_head: a74d73b20447c8d9beab999bbfa5ddb7d6d748b4
+skillbridge_head: 25c352e6219e0f9ca45bdbc9a2ff0bafae4ddb06
+
+output:
+AgentCity skill bootstrap
+Root: C:\Users\MY PC\OneDrive\Desktop\AgentCity
+
+[ok] ADK Agent Builder already at a74d73b20447c8d9beab999bbfa5ddb7d6d748b4
+[ok] SkillBridge already at 25c352e6219e0f9ca45bdbc9a2ff0bafae4ddb06
+
+Tool verification
+  SkillBridge: skillbridge 2.0.1
+  google-adk:  2.12.0
+
+Done. SkillBridge runtime path: src/skills/skills-bridge/src

@@ -1,0 +1,9 @@
+command: $env:PYTHONPATH='src/skills/adk-agent-builder/src'; python -m adk_agent_builder.cli doctor --json
+cwd: C:\Users\MY PC\OneDrive\Desktop\AgentCity
+exit_code: 0
+mode: offline
+provider: none
+started_at: 2026-10-23 (exact time not captured)
+duration_seconds: not captured
+result: passed
+notes: Fallback mode is active because agents-cli and gcloud are absent. Raw JSON report is stored as-is; it contains no secrets.

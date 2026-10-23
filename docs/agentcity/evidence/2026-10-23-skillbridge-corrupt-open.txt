@@ -1,0 +1,8 @@
+python : Error: DatabaseError: database disk image is malformed The corrupt database is moved to 
+skillbridge.db.corrupt-<timestamp> on next open.
+At line:1 char:107
++ ... ridge/src'; python -m skillbridge --offline --json search-skills "pdf ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Error: Database...> on next open.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 

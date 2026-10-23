@@ -1,0 +1,12 @@
+command: python scripts/check-docs.py
+cwd: C:\Users\MY PC\OneDrive\Desktop\AgentCity
+exit_code: 0
+mode: offline
+provider: none
+started_at: 2026-10-23T15:22:16Z
+duration_seconds: 0.22
+result: passed
+notes: 61 Markdown files validated, including engineering docs, runbooks, templates, and the fresh-user test record
+
+output:
+Documentation check OK: 61 Markdown files validated.

@@ -1,0 +1,19 @@
+AgentCity
+Copyright (c) 2026 Aditya Bhardwaj
+Licensed under the MIT License. See LICENSE.
+
+AgentCity is an original application. It is not a rebrand of, and does not
+bundle source from, Personal Jarvis, OpenHands, OpenDex, Mission Control, or
+OpenComputer.
+
+AgentCity uses the following third-party tools at development time or runtime.
+Each remains under its own license; see THIRD_PARTY_NOTICES.md for pinned
+versions and attribution requirements.
+
+- Google Agent Development Kit (google-adk) - Apache-2.0
+- ADK Agent Builder Skill (development-time generator/validator) - Apache-2.0
+- SkillBridge (runtime MCP skill broker) - MIT
+- Electron, React, Vite, TypeScript and related packages - MIT / Apache-2.0
+- FastAPI, Uvicorn, Pydantic, SQLite - MIT / Apache-2.0 / Public Domain
+
+No upstream logos, brand assets, or model weights are included.

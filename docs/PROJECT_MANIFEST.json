@@ -1,0 +1,309 @@
+{
+  "schema_version": "1.0.0",
+  "project": {
+    "name": "AgentCity",
+    "tagline": "The AI operating system for your PC",
+    "license": "MIT",
+    "milestone": "M0 — architecture and context foundation",
+    "status": "docs-complete",
+    "next_milestone": {
+      "id": "M1",
+      "name": "Vertical slice",
+      "summary": "Electron shell, FastAPI sidecar, SQLite event ledger, offline planner, approval gate, artifact, cancellation, and restart recovery wired end to end.",
+      "exit_criteria": [
+        "App launches and reports sidecar health with no provider configured",
+        "One mission creates a typed plan, requests approval, executes a deterministic local tool, and produces a verifier-approved artifact",
+        "Events persist before the UI consumes them and survive an app restart",
+        "Cancel stops an in-flight run and marks the mission cancelled",
+        "Automated tests cover the happy path, approval rejection, cancellation, and restart recovery",
+        "Evidence is recorded under docs/agentcity/evidence/"
+      ]
+    }
+  },
+  "environment": {
+    "platform": "Windows 11 Home (win32)",
+    "python": "3.12.10",
+    "node": "24.19.0",
+    "npm": "11.17.0",
+    "uv": "0.12.5",
+    "google_adk": "2.12.0",
+    "mcp": "2.3.0",
+    "ram": "7.8 GB total",
+    "gpu": "Intel UHD Graphics (1 GB shared)",
+    "package_manager": "npm (pnpm and Rust not installed)",
+    "provider_configured": false
+  },
+  "paths": {
+    "desktop": "src/desktop",
+    "backend": "src/backend",
+    "skills_adk_builder": "src/skills/adk-agent-builder",
+    "skills_bridge": "src/skills/skills-bridge",
+    "docs": "docs",
+    "evidence": "docs/agentcity/evidence",
+    "app_data_default": "%LOCALAPPDATA%/AgentCity"
+  },
+  "commands": {
+    "doc_check": {
+      "command": "python scripts/check-docs.py",
+      "purpose": "Validate frontmatter, links, Mermaid fences, and manifest consistency",
+      "status": "implemented"
+    },
+    "context_generate": {
+      "command": "python scripts/generate-context.py",
+      "purpose": "Regenerate state-of-build and repository map from this manifest",
+      "status": "implemented"
+    },
+    "skills_restore": {
+      "command": "powershell -File scripts/bootstrap-skills.ps1 -AdkRepoUrl <url> -SkillsRepoUrl <url>",
+      "purpose": "Clone the two pinned tools into src/skills/ (or use -VerifyOnly when already present)",
+      "status": "implemented"
+    },
+    "adk_builder_doctor": {
+      "command": "python -m adk_agent_builder.cli doctor --json",
+      "purpose": "Check the ADK Agent Builder environment (run with PYTHONPATH=src/skills/adk-agent-builder/src; see tooling-inventory.md)",
+      "status": "implemented"
+    },
+    "skillbridge_version": {
+      "command": "python -m skillbridge --version",
+      "purpose": "Verify the SkillBridge runtime (run with PYTHONPATH=src/skills/skills-bridge/src)",
+      "status": "implemented"
+    },
+    "backend_dev": {
+      "command": "uv run uvicorn agentcity.api:app --host 127.0.0.1 --port 0",
+      "purpose": "Start the local API sidecar (M1)",
+      "status": "planned"
+    },
+    "desktop_dev": {
+      "command": "npm run dev -w src/desktop",
+      "purpose": "Start the Electron shell and renderer (M1)",
+      "status": "planned"
+    },
+    "backend_tests": {
+      "command": "uv run pytest",
+      "purpose": "Python unit and integration tests (M1)",
+      "status": "planned"
+    },
+    "ui_tests": {
+      "command": "npm test -w src/desktop",
+      "purpose": "Vitest component tests (M1)",
+      "status": "planned"
+    },
+    "e2e_tests": {
+      "command": "npm run e2e -w src/desktop",
+      "purpose": "Playwright end-to-end tests (M3)",
+      "status": "planned"
+    }
+  },
+  "features": [
+    {
+      "id": "context-pack",
+      "name": "AI context pack, constitution, and documentation tooling",
+      "status": "implemented",
+      "notes": "Docs, diagrams, standards, runbooks, manifest, and doc checker exist. App code does not.",
+      "evidence": "docs/agentcity/evidence/2026-10-23-docs-check.txt"
+    },
+    {
+      "id": "tool-pins",
+      "name": "Pinned local clones of ADK Agent Builder and SkillBridge",
+      "status": "implemented",
+      "notes": "Cloned into src/skills and pinned; gitignored by design.",
+      "evidence": "docs/agentcity/evidence/2026-10-23-tool-pins.txt"
+    },
+    {
+      "id": "desktop-shell",
+      "name": "Secure Electron shell with typed preload bridge",
+      "status": "planned",
+      "notes": "M1",
+      "evidence": null
+    },
+    {
+      "id": "local-api",
+      "name": "Loopback FastAPI sidecar with per-launch capability token",
+      "status": "planned",
+      "notes": "M1",
+      "evidence": null
+    },
+    {
+      "id": "mission-engine",
+      "name": "Deterministic mission lifecycle, DAG, budgets, and checkpoints",
+      "status": "planned",
+      "notes": "M1",
+      "evidence": null
+    },
+    {
+      "id": "event-ledger",
+      "name": "Persisted typed events with sequence cursor and SSE replay",
+      "status": "planned",
+      "notes": "M1",
+      "evidence": null
+    },
+    {
+      "id": "approval-broker",
+      "name": "Risk classification and human approval queue",
+      "status": "planned",
+      "notes": "M1",
+      "evidence": null
+    },
+    {
+      "id": "artifact-store",
+      "name": "App-owned artifact store with provenance",
+      "status": "planned",
+      "notes": "M1",
+      "evidence": null
+    },
+    {
+      "id": "restart-recovery",
+      "name": "Interrupted-step detection and safe resume semantics",
+      "status": "planned",
+      "notes": "M1",
+      "evidence": null
+    },
+    {
+      "id": "adk-agents",
+      "name": "ADK root, planner, specialists, and verifier",
+      "status": "planned",
+      "notes": "M2; definitions generated and validated with the ADK Agent Builder",
+      "evidence": null
+    },
+    {
+      "id": "skills-bridge",
+      "name": "SkillBridge stdio MCP integration and capability registry",
+      "status": "planned",
+      "notes": "M2; broker health check plus timeout, malformed, and reconnect tests",
+      "evidence": null
+    },
+    {
+      "id": "city-overview",
+      "name": "City Overview command map backed by persisted events",
+      "status": "planned",
+      "notes": "M3",
+      "evidence": null
+    },
+    {
+      "id": "command-chat",
+      "name": "Streaming chat with cancellation, citations, and artifacts",
+      "status": "planned",
+      "notes": "M3",
+      "evidence": null
+    },
+    {
+      "id": "agent-teams-ui",
+      "name": "Agent roster, templates, scopes, and direct conversation",
+      "status": "planned",
+      "notes": "M3",
+      "evidence": null
+    },
+    {
+      "id": "desktop-vision",
+      "name": "Consent-based screen capture and Windows UI Automation",
+      "status": "planned",
+      "notes": "M4; fresh observation after action batches, emergency stop",
+      "evidence": null
+    },
+    {
+      "id": "voice",
+      "name": "Push-to-talk input and local TTS with visible mic state",
+      "status": "planned",
+      "notes": "M4; wake word deferred and off by default",
+      "evidence": null
+    },
+    {
+      "id": "projects-memory",
+      "name": "Project knowledge, SQLite FTS retrieval, memory controls",
+      "status": "planned",
+      "notes": "M5",
+      "evidence": null
+    },
+    {
+      "id": "coding-adapters",
+      "name": "Coding CLI adapters with verified worktrees and handoff",
+      "status": "planned",
+      "notes": "M5",
+      "evidence": null
+    },
+    {
+      "id": "automations",
+      "name": "User-authored routines with budgets and approval gates",
+      "status": "planned",
+      "notes": "M5",
+      "evidence": null
+    },
+    {
+      "id": "eval-lab",
+      "name": "ADK trajectory and answer evaluation dashboard",
+      "status": "planned",
+      "notes": "M5",
+      "evidence": null
+    },
+    {
+      "id": "packaging",
+      "name": "Windows installer and clean-install smoke test",
+      "status": "planned",
+      "notes": "M6",
+      "evidence": null
+    },
+    {
+      "id": "release-verification",
+      "name": "Truthful release report with pass, fail, skip, and blocked checks",
+      "status": "planned",
+      "notes": "M6",
+      "evidence": null
+    }
+  ],
+  "tools": [
+    {
+      "name": "ADK Agent Builder",
+      "commit": "a74d73b20447c8d9beab999bbfa5ddb7d6d748b4",
+      "license": "Apache-2.0",
+      "role": "build-time generation, validation, testing, evaluation",
+      "state": "pinned clone"
+    },
+    {
+      "name": "SkillBridge",
+      "commit": "25c352e6219e0f9ca45bdbc9a2ff0bafae4ddb06",
+      "license": "MIT",
+      "role": "runtime MCP broker over stdio (19 tools)",
+      "state": "pinned clone"
+    },
+    {
+      "name": "Google ADK",
+      "commit": "2.12.0",
+      "license": "Apache-2.0",
+      "role": "agent reasoning runtime and evaluation",
+      "state": "installed"
+    }
+  ],
+  "docs": {
+    "ai_context": "docs/AI_CONTEXT.md",
+    "index": "docs/README.md",
+    "prd": "docs/agentcity/PRD.md",
+    "architecture": "docs/architecture/overview.md",
+    "diagrams": "docs/architecture/diagrams.md",
+    "contracts": "docs/architecture/contracts.md",
+    "data_model": "docs/architecture/data-model.md",
+    "security": "docs/agentcity/security-model.md",
+    "testing": "docs/agentcity/test-plan.md",
+    "debugging": "docs/engineering/debugging-playbook.md",
+    "change_recipes": "docs/engineering/change-recipes.md",
+    "state_of_build": "docs/agentcity/state-of-build.md",
+    "repo_map": "docs/repo-map.md"
+  },
+  "security": {
+    "local_bind": "127.0.0.1 only",
+    "api_auth": "per-launch capability token",
+    "desktop_capture_default": "off",
+    "wake_word_default": "off",
+    "telemetry": "none",
+    "cloud_sync": "none",
+    "approval_model": "deterministic policy broker; the model never grants itself permission"
+  },
+  "resource_budget": {
+    "idle_total_mb": 600,
+    "backend_mb": 250,
+    "renderer_and_main_mb": 350,
+    "max_concurrent_workers": 2,
+    "local_models": false,
+    "event_buffer_max": 5000,
+    "screenshot_max_bytes": 8388608
+  }
+}

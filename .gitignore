@@ -1,0 +1,56 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+
+# Runtime data (never commit user data, databases, or mission output)
+runtime/
+artifacts/
+*.db
+*.db-wal
+*.db-shm
+logs/
+*.log
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Vendored skill clones, restored by scripts/bootstrap-skills.ps1
+src/skills/adk-agent-builder/
+src/skills/skills-bridge/
+
+# Test output
+test-results/
+playwright-report/
+coverage/
+htmlcov/
+.coverage
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# Original planning input. The canonical, maintained copy is
+# docs/agentcity/source-brief/; this folder is kept for provenance only.
+/AgentCity_Build_Pack/
+
+# Agent scratch
+.opencode/
+*.tmp

@@ -1,0 +1,9 @@
+command: python -m skillbridge --offline --json search-skills "pdf" (exact trailing arguments truncated in captured stderr)
+cwd: C:\Users\MY PC\OneDrive\Desktop\AgentCity
+exit_code: not captured
+mode: offline
+provider: none
+started_at: 2026-10-23 (exact time not captured)
+duration_seconds: not captured
+result: failed
+notes: Raw PowerShell stderr, converted from UTF-16LE to UTF-8 without changing the text. This attempt used the real home instead of --home and triggered the malformed-database warning. The database file's last-write time remained 2026-10-19, so this attempt did not create a quarantine copy. Do not repeat it.

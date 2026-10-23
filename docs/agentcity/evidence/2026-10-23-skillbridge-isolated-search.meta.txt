@@ -1,0 +1,9 @@
+command: python -m skillbridge --home "$env:TEMP\agentcity-sb-test" --offline --json search-skills "pdf" --limit 1
+cwd: C:\Users\MY PC\OneDrive\Desktop\AgentCity
+exit_code: 0
+mode: offline
+provider: none
+started_at: 2026-10-23 (exact time not captured)
+duration_seconds: not captured
+result: passed
+notes: Valid JSON array returned from a throwaway home. The session used PYTHONPATH=src/skills/skills-bridge/src. Raw tool output is stored without edits.

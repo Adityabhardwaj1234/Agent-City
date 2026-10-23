@@ -1,0 +1,81 @@
+[
+  {
+    "extension_id": "official/productivity/pdf",
+    "name": "pdf",
+    "display_name": "pdf",
+    "extension_type": "skill",
+    "description": "PDF files: create, read, merge, fill, OCR, edit text.",
+    "source_provider": "hermes-bundled",
+    "canonical_uri": "file:///C:/Users/MY%20PC/OneDrive/Desktop/AgentCity/src/skills/skills-bridge/src/skillbridge/data/hermes_catalog/bundled_skills/productivity/pdf",
+    "repo": "NousResearch/hermes-agent",
+    "source_path": "C:\\Users\\MY PC\\OneDrive\\Desktop\\AgentCity\\src\\skills\\skills-bridge\\src\\skillbridge\\data\\hermes_catalog\\bundled_skills\\productivity\\pdf",
+    "version_or_revision": "1.1.0",
+    "content_hash": "sha256:1be75c3f6b80667e",
+    "trust_level": "builtin",
+    "security_verdict": "SAFE",
+    "tags": [
+      "pdf",
+      "documents",
+      "forms",
+      "ocr",
+      "text-extraction",
+      "reportlab",
+      "pypdf",
+      "pdfplumber",
+      "pymupdf",
+      "marker",
+      "productivity"
+    ],
+    "task_categories": [
+      "productivity"
+    ],
+    "capabilities": [
+      "pdf",
+      "documents",
+      "forms",
+      "ocr",
+      "text-extraction"
+    ],
+    "platforms": [
+      "linux",
+      "darwin",
+      "win32"
+    ],
+    "compatible_clients": [
+      "opencode",
+      "claude-code",
+      "hermes"
+    ],
+    "dependencies": [],
+    "mcp_transport": null,
+    "install_targets": [
+      "opencode",
+      "claude-code",
+      "hermes"
+    ],
+    "popularity_signals": {},
+    "outcome_stats": {
+      "total_runs": 0,
+      "successes": 0,
+      "regressions": 0,
+      "success_rate": null,
+      "avg_latency_ms": 0.0,
+      "last_used_at": null,
+      "trust_override": null
+    },
+    "extra_metadata": {
+      "local_path": "C:\\Users\\MY PC\\OneDrive\\Desktop\\AgentCity\\src\\skills\\skills-bridge\\src\\skillbridge\\data\\hermes_catalog\\bundled_skills\\productivity\\pdf",
+      "frontmatter_keys": [
+        "name",
+        "description",
+        "version",
+        "author",
+        "license",
+        "platforms",
+        "metadata"
+      ]
+    },
+    "cached_at": "2026-10-23T14:36:21.708021+00:00",
+    "updated_at": "2026-10-23T14:36:24.896081+00:00"
+  }
+]

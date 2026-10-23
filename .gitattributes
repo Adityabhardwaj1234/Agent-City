@@ -1,0 +1,13 @@
+# Normalize text files to LF in the repository and the working tree.
+* text=auto eol=lf
+
+# Captured evidence keeps raw trailing spaces and blank lines.
+docs/agentcity/evidence/** -whitespace
+
+# Binary assets (reserved; none tracked yet).
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary

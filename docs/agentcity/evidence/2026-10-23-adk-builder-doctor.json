@@ -1,0 +1,60 @@
+{
+  "cli_bridges": {
+    "adk_cli": {
+      "installed": true,
+      "path": "C:\\Users\\MY PC\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\adk.EXE",
+      "version": "adk.EXE, version 2.12.0"
+    },
+    "agents_cli": {
+      "install_hint": "uvx google-agents-cli setup  OR  pip install google-agents-cli && agents-cli setup",
+      "installed": false,
+      "path": null,
+      "version": null
+    },
+    "fallback_mode_active": true,
+    "gcloud": {
+      "installed": false,
+      "path": null
+    },
+    "uv": {
+      "installed": true,
+      "path": "C:\\Users\\MY PC\\AppData\\Local\\hermes\\bin\\uv.EXE"
+    }
+  },
+  "default_config": {
+    "adk_target_version": "2.12.0",
+    "artifact_service_type": "in_memory",
+    "daily_api_call_budget": 20,
+    "default_model": "gemini-2.5-flash",
+    "default_provider": "gemini",
+    "enable_experimental_telemetry": false,
+    "enable_skill_lifecycle": false,
+    "extra": {},
+    "fallback_model": "gemini-2.5-pro",
+    "json_logs": false,
+    "log_level": "INFO",
+    "max_llm_calls_per_run": 20,
+    "max_repair_attempts": 3,
+    "memory_service_uri": "sqlite:///adk_memory.db",
+    "redact_prompts_by_default": true,
+    "require_deployment_approval": true,
+    "session_service_uri": "memory://",
+    "subprocess_timeout_seconds": 60,
+    "workspace_dir": "C:\\Users\\MY PC\\OneDrive\\Desktop\\AgentCity"
+  },
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python_version": "3.12.10",
+  "registered_integrations_count": 12,
+  "registered_providers": [
+    "gemini",
+    "vertex_ai",
+    "gemma",
+    "anthropic",
+    "openai",
+    "litellm",
+    "ollama",
+    "vllm"
+  ],
+  "registered_templates_count": 11,
+  "suite_version": "2.0.0"
+}
