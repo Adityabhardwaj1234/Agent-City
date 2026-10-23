@@ -60,6 +60,7 @@ command and context when the JSON has no envelope.
 | `2026-10-23-tool-pins.txt` | Both tool clones exist at the pinned commits and import | passed |
 | `2026-10-23-docs-check.txt` | Documentation pack passes the checker | passed (60 files) |
 | `2026-10-23-fresh-user-docs-test.md` | A new contributor can follow the README M0 setup | passed after fixes (round 2 go) |
+| `2026-10-23-git-push.txt` | `main` is published to the configured `origin` and matches locally | passed (SHAs equal) |
 | `2026-10-23-adk-builder-doctor.json` | ADK Agent Builder CLI runs and reports environment | passed (fallback mode, optional tools absent) |
 | `2026-10-23-skillbridge-isolated-search.json` | SkillBridge MCP package works from an isolated home | passed (read-only search; metadata in `.meta.txt`) |
 | `2026-10-23-skillbridge-corrupt-open.txt` | Opening the real production catalog fails safely | failed as expected (malformed database; no quarantine created) |

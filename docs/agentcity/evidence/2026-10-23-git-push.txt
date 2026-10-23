@@ -1,0 +1,13 @@
+command: git push -u origin main
+cwd: <repo-root>
+exit_code: 0
+mode: live
+provider: none
+started_at: 2026-10-23 (session publication check)
+duration_seconds: not captured
+result: passed
+branch: main
+local_sha: 29d8a11f19a6e2754ff6453ae2a64746f2545340
+remote_sha: 29d8a11f19a6e2754ff6453ae2a64746f2545340
+verified: local main equals origin/main
+notes: PowerShell surfaced git progress on stderr as NativeCommandError, but the exit code was 0 and the refs matched. Branch main now tracks origin/main. The remote URL lives only in Git configuration, not in the repository.
