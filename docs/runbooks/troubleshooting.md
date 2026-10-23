@@ -12,7 +12,7 @@ Start with the evidence, not with a guess.
 ## 1. Collect first
 
 ```powershell
-Set-Location "C:\Users\MY PC\OneDrive\Desktop\AgentCity"
+# Run from the repository root.
 git status --short --branch
 python --version
 node --version
@@ -155,7 +155,7 @@ findings). See `mcp-and-skills.md`.
 - `PYTHONPATH` must be set in the current shell for source-based tools.
 - `adk --version` may print a path error; use `adk --help` and the Python package
   version.
-- Long paths and spaces in `C:\Users\MY PC\...` require quoting.
+- Long paths and spaces in a Windows profile path require quoting.
 
 ## 15. When to stop
 

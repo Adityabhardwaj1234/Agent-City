@@ -69,6 +69,9 @@ command and context when the JSON has no envelope.
 
 - Never edit a captured result to make it pass. Re-run and add a new file.
 - Redact secrets and personal data before saving.
+- Some captured output contains the test machine's local paths (for example
+  `C:\Users\...`). They are not secrets and are preserved because evidence is
+  raw; published setup docs use `%USERPROFILE%` and repository-relative paths.
 - Keep screenshots supplemental; a screenshot is not proof of behavior.
 - Link evidence from the manifest, acceptance table, or release report.
 - Delete stale evidence only when the corresponding claim is removed.

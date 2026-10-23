@@ -32,7 +32,7 @@ Mode tests.
 ## 2. Repository
 
 ```powershell
-Set-Location "C:\Users\MY PC\OneDrive\Desktop\AgentCity"
+# Run from the repository root.
 git status --short --branch
 ```
 

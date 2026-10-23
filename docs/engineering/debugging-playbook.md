@@ -96,7 +96,7 @@ Error: DatabaseError: database disk image is malformed
 The corrupt database is moved to skillbridge.db.corrupt-<timestamp> on next open.
 ```
 
-`PRAGMA integrity_check` on `C:\Users\MY PC\.skillbridge\skillbridge.db`
+`PRAGMA integrity_check` on `%USERPROFILE%\.skillbridge\skillbridge.db`
 returned 91 findings (freelist corruption, out-of-order rowids on trees 8/10).
 The database still has 27 tables, so it is partially readable but unsafe.
 

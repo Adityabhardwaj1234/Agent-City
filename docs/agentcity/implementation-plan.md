@@ -185,6 +185,33 @@ routing. M6 depends on all.
 Default concurrency on this machine: **2 workers**, raised only after measuring
 RAM and CPU.
 
+## Session-end publication protocol
+
+Every session ends with a verified push of the finalized, production-ready work
+to the configured `origin` remote. The integrator owns this gate.
+
+1. Run the nearest tests and `python scripts/check-docs.py`.
+2. Confirm the working tree is clean and that no secrets, runtime data,
+   databases, `.env` files, or `src/skills/**` clones are staged.
+3. Commit the verified work with a Conventional Commit message.
+4. Push `main` and verify the remote SHA:
+
+   ```powershell
+   git push origin main
+   git fetch origin
+   git rev-parse main
+   git rev-parse origin/main
+   ```
+
+5. Record the branch, local SHA, remote SHA, checks run, and push result in the
+   session handoff or evidence when the session makes a release or acceptance
+   claim.
+
+The push is not optional for finished work. If it fails, report the exact
+command and error, leave the verified commit local, and mark the session
+**blocked on publication**. Never force-push, never publish failing or
+secret-bearing work, and never describe an unpushed session as delivered.
+
 ## Development roster
 
 | Role | Owns | Does not own |

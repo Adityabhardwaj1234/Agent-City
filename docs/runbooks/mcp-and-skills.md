@@ -53,7 +53,7 @@ Expected: exit 0 and a JSON array with a real bundled skill. This was verified o
 
 ## 4. Known defect: corrupt production catalog
 
-`C:\Users\MY PC\.skillbridge\skillbridge.db` fails `PRAGMA integrity_check`
+`%USERPROFILE%\.skillbridge\skillbridge.db` fails `PRAGMA integrity_check`
 with 91 findings. SkillBridge reports `database disk image is malformed` and
 warns that it will quarantine the file to `skillbridge.db.corrupt-<timestamp>`
 on a later open. The recorded attempt did not create a quarantine copy and did

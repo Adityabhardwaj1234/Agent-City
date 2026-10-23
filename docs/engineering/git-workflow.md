@@ -60,7 +60,41 @@ Rules:
 - Do not commit generated runtime data, databases, logs, or `.env`.
 - Do not commit `src/skills/**`; record the pinned SHAs instead.
 
-## 4. Worktrees
+## 4. Session-end publication
+
+Every work session ends by publishing finalized, production-ready work to the
+configured `origin` remote. This is a deliberate gate, not a background sync.
+
+Before pushing:
+
+1. Run the nearest tests and `python scripts/check-docs.py`.
+2. Confirm `git status` is clean and that no secrets, runtime data, databases,
+   `.env` files, or `src/skills/**` clones are staged.
+3. Commit the verified work with a Conventional Commit message.
+4. Confirm the branch is `main` or the intended feature branch.
+
+Publish and verify:
+
+```powershell
+git push origin main
+git fetch origin
+git rev-parse main
+git rev-parse origin/main
+```
+
+The two SHAs must match. If the session made a release or acceptance claim,
+record the branch, local SHA, remote SHA, and push result as evidence.
+
+Rules:
+
+- Never force-push `main` or any shared branch.
+- If the push is rejected, fetch and integrate, rerun the tests, then push.
+- If authentication or network blocks the push, report the exact command and
+  error. Do not claim the session is published.
+- Incomplete, failing, or secret-bearing work stays local and is named as
+  blocked; it is not pushed to look finished.
+
+## 5. Worktrees
 
 When parallel work is separable:
 
@@ -94,7 +128,7 @@ Only the integrator merges. Merges happen after:
 - the documented tests pass;
 - docs and contracts are updated.
 
-## 5. Shared files
+## 6. Shared files
 
 Single owner at a time:
 
@@ -107,7 +141,7 @@ Single owner at a time:
 Other workers request changes through the integrator rather than editing these
 concurrently.
 
-## 6. Review checklist
+## 7. Review checklist
 
 - [ ] The change matches its description; no drive-by edits.
 - [ ] Boundary types and validation are present.
@@ -119,14 +153,14 @@ concurrently.
 - [ ] No fake data or dead controls in real mode.
 - [ ] Resource budget respected.
 
-## 7. Release tags
+## 8. Release tags
 
 - `v0.x.y` while the product is incomplete.
 - A tag requires `docs/agentcity/release-verification.md` with real results.
 - Never tag a build with failed critical tests.
 - Annotated tags with a summary of scope and known limitations.
 
-## 8. Recovery
+## 9. Recovery
 
 - A bad local change: inspect with `git diff`, ask before discarding.
 - A bad commit not pushed: prefer `git revert` over rewriting history.

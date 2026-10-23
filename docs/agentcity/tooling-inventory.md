@@ -125,7 +125,7 @@ in the sibling `.meta.txt`.
 
 ### Verified defect: production catalog is corrupt
 
-The real catalog at `C:\Users\MY PC\.skillbridge\skillbridge.db` fails
+The real catalog at `%USERPROFILE%\.skillbridge\skillbridge.db` fails
 `PRAGMA integrity_check` with 91 findings (freelist corruption, out-of-order
 rowids on trees 8 and 10). An earlier open attempt reported the database as
 malformed and warned that it would move the file to `.corrupt-<timestamp>` on

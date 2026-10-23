@@ -37,8 +37,13 @@ Read in this order before touching code:
    established, deny the action and explain the blocker.
 7. **Preserve user work.** No `git clean`, `git reset --hard`, force-push, bulk
    rewrite, or deletion of untracked files. Ask before destructive actions.
-8. **Commit discipline.** Commit every production-stable update after checks
-   pass. One logical change per commit. Conventional Commits format.
+8. **Commit and push discipline.** Commit every production-stable update after
+   checks pass. One logical change per commit. Conventional Commits format. At
+   the end of every work session, push the finalized, production-ready commits
+   on `main` to the configured `origin` remote and verify that local `HEAD`
+   equals `origin/main`. Never push failing, unverified, or secret-bearing work.
+   Never force-push. If authentication or network blocks the push, report the
+   exact command and error; do not claim the session is published.
 9. **Resource budget.** The target machine has 7.8 GB RAM. Default to at most
    two concurrent agent workers, no local models, bounded queues and buffers.
 10. **Honest integration boundaries.** If a provider key, native permission, or
